@@ -1,0 +1,101 @@
+/* Variáveis de Cores - Estilo Terminal Moderno */
+:root {
+    --bg-color: #0d1117;       /* Fundo quase preto (estilo GitHub Dark) */
+    --container-bg: #161b22;   /* Fundo das secções */
+    --text-main: #c9d1d9;      /* Texto cinza claro */
+    --accent-color: #58a6ff;   /* Azul para links e destaques */
+    --terminal-green: #39ff14; /* Verde neon para títulos e prompt */
+    --border-color: #30363d;
+}
+
+body {
+    font-family: 'Fira Code', 'Courier New', monospace; /* Fonte estilo código */
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    text-align: left;
+    padding: 2rem 0;
+    border-bottom: 2px solid var(--terminal-green);
+    margin-bottom: 2rem;
+}
+
+header h1::before {
+    content: "> "; /* Simula um prompt de comando */
+    color: var(--terminal-green);
+}
+
+header h1 {
+    color: var(--terminal-green);
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+section {
+    background-color: var(--container-bg);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    transition: transform 0.2s ease;
+}
+
+section:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+h2 {
+    color: var(--accent-color);
+    border-bottom: 1px dotted var(--border-color);
+    padding-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+}
+
+.skills-list li {
+    background: #21262d;
+    padding: 8px;
+    border-radius: 4px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    font-size: 0.9rem;
+}
+
+.skills-list li::before {
+    content: "λ "; /* Carácter lambda, comum em programação funcional */
+    color: var(--terminal-green);
+}
+
+a {
+    color: var(--terminal-green);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    filter: brightness(1.2);
+}
+
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 0.8rem;
+    color: #8b949e;
+}
+
+/* Scrollbar personalizada para combinar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-color); }
+::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 10px; }
